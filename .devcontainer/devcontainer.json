@@ -1,0 +1,33 @@
+{
+	"name": "react-complete-guide",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"forwardPorts": [
+		3000
+	],
+	"portsAttributes": {
+		"3000": {
+			"label": "React",
+			"onAutoForward": "silent"
+		}
+	},
+	"containerUser": "node",
+	"postCreateCommand": [
+		"yarn",
+		"install"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"eamodio.gitlens",
+				"esbenp.prettier-vscode",
+				"VisualStudioExptTeam.vscodeintellicode"
+			],
+			"settings": {
+				"editor.defaultFormatter": "esbenp.prettier-vscode"
+			}
+		}
+	}
+}
