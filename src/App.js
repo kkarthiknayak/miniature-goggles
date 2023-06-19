@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import AddStudentForm from './components/Student';
 
 function App() {
+
+  const [students,setStudents] = useState([]);
+
+  useEffect(() => {
+    fetch("/actuator/health").then(console.log)
+  });
+
+
+  const addStudentInfo = (email,studentName,phoneNumber) => {
+    const newStudent = {email,studentName,phoneNumber}
+    setStudents([...students,newStudent])
+    console.log(students)
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AddStudentForm addStudentInfo={addStudentInfo} />
     </div>
   );
 }
