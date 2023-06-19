@@ -1,0 +1,6 @@
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Optional: Set the height to occupy the full viewport */
+  }
