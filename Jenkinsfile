@@ -6,7 +6,8 @@ pipeline {
             steps {
                 // Checkout your source code from version control system
                 // For example, if you're using Git:
-                https://github.com/kkarthiknayak/miniature-goggles.git
+                git 'https://github.com/your-repo/react-app.git'
             }
-        }              
+        }
+	}	
 }
