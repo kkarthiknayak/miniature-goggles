@@ -1,9 +1,8 @@
 pipeline {
-    agent {
-        node {
-            label 'node'
-            // The agent with Node.js installed will be used for the pipeline
-        }
+    agent any
+    tools {
+        nodejs 'node'
+        // Use the configured Node.js installation specified by 'your-nodejs-tool-name'
     }
     
     stages {
