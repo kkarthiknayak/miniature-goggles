@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            label 'node'
+            // The agent with Node.js installed will be used for the pipeline
+        }
+    }
     
     stages {
         stage('Checkout') {
@@ -10,7 +15,15 @@ pipeline {
                 branch: 'main'
             }
         }
+        stage('Install Dependencies') {
+            steps {
+                
+                sh 'npm install'
+            }
+        }
     
+
+        
         // Add more stages for building, testing, etc.
     }
 }
