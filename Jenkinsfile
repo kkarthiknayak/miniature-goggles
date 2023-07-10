@@ -14,8 +14,8 @@ pipeline {
                                 url: 'https://github.com/kkarthiknayak/miniature-goggles.git'
                         }
                     }
-                }
             }
+        }
         stage('Install Dependencies') {
             steps {
                 // Install Node.js and npm
@@ -29,7 +29,7 @@ pipeline {
             }
         }
             
-        }
+    }
         
         // Add more stages for building, testing, etc.
     }
