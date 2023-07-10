@@ -13,6 +13,7 @@ pipeline {
                     // Use the credential in your build steps
                     sh 'echo "Username: $USERNAME"'
                     sh 'echo "Password: $PASSWORD"'
+				}
                 
             }
         }
