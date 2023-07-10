@@ -5,13 +5,15 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Bind the credential to a variable
-                withCredentials([usernamePassword(credentialsId: 'react-pswd', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'react-pswd-global', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
                     // Git checkout with credentials
-                    git credentialsId: 'react-pswd',
-                        url: 'https://github.com/kkarthiknayak/miniature-goggles.git',
-                        branch: 'main',
-                        usernameVariable: 'GIT_USERNAME',
-                        passwordVariable: 'GIT_PASSWORD'
+                    steps {
+                        script {
+                            git branch: 'main',
+                                credentialsId: 'react-pswd-global',
+                                url: 'https://github.com/kkarthiknayak/miniature-goggles.git'
+                        }
+                    }
                 }
             }
         stage('Install Dependencies') {
