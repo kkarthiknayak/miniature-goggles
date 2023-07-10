@@ -32,15 +32,7 @@ pipeline {
                 sh 'npm test'
             }
         }
-        stage('Host on Static Server') {
-            steps {
-                // Copy the built files to the static server location
-                sh 'npm install express'
-                sh 'node server.js'
-                sh 'sleep 10' // Wait for server to start
-                sh 'cp -R build/* /var/www/html'
-            }
-        }
+        
     
 
         
