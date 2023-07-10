@@ -26,6 +26,12 @@ pipeline {
                 sh 'npm run build'
             }
         }
+        stage('Test') {
+            steps {
+                // Run tests
+                sh 'npm test'
+            }
+        }
         stage('Host on Static Server') {
             steps {
                 // Copy the built files to the static server location
