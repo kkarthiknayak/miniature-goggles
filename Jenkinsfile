@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Bind the credential to a variable
+                // Bind the credential to a variabl
                 withCredentials([usernamePassword(credentialsId: 'react-pswd', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
                     // Git checkout with credentials
                     git credentialsId: 'react-pswd',
@@ -16,6 +16,6 @@ pipeline {
             }
         }
         
-        // Add more stages for building, testing, etc.
+        // Add more stages for building, testing, etc..
     }
 }
