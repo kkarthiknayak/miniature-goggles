@@ -30,9 +30,7 @@ pipeline {
             steps {
                 // Copy the built files to the static server location
                 sh 'npm install express'
-                sh 'npm fund'
-                sh 'npm audit fix --force'
-                sh 'node server.js &'
+                sh 'node server.js'
                 sh 'sleep 10' // Wait for server to start
                 sh 'cp -R build/* /var/www/html'
             }
