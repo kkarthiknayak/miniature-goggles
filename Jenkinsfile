@@ -10,7 +10,12 @@ pipeline {
                 branch: 'main'
             }
         }
-        
+        stage('Install Dependencies') {
+            steps {
+                
+                sh 'npm install'
+            }
+        }
     
 
         
