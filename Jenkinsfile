@@ -1,20 +1,17 @@
 pipeline {
     agent any
-    libraries {
-        library(identifier: 'credentials-binding@1.30', retriever: modernSCM([$class: 'GitSCMSource', remote: 'https://github.com/kkarthiknayak/miniature-goggles.git']))
-    }
     
     stages {
-        stage('Checkout') {
+        stage('Install Dependencies') {
             steps {
-                // Checkout your source code from version control system
-                // For example, if you're using Git:
-		withCredentials([usernamePassword(credentialsId: 'your-credential-id', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    // Use the credential in your build steps
-                    sh 'echo "Username: $USERNAME"'
-                    sh 'echo "Password: $PASSWORD"'
-				}
+                // Install Node.js and npm
+                // You can use a tool like nvm to manage Node.js versions
+                // For example, using nvm:
+                sh 'nvm install 14.17.0'
+                sh 'nvm use 14.17.0'
                 
+                // Install project dependencies
+                sh 'npm install'
             }
         }
 	}	
