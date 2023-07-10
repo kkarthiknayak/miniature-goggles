@@ -20,6 +20,12 @@ pipeline {
                 sh 'npm install'
             }
         }
+        stage('Build') {
+            steps {
+                // Build the React app
+                sh 'npm run build'
+            }
+        }
     
 
         
