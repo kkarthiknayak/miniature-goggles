@@ -7,10 +7,7 @@ pipeline {
                 
                 git credentialsId: 'react-pswd-global',
                 url: 'https://github.com/kkarthiknayak/miniature-goggles.git',
-                branch: 'main',
-                usernameVariable: 'GIT_USERNAME',
-                passwordVariable: 'GIT_PASSWORD'
-            
+                branch: 'main'
             }
         }
         stage('Install Dependencies') {
