@@ -5,11 +5,11 @@ pipeline {
         stage('Checkout') {
             steps {
                 
-                    git credentialsId: 'react-pswd-global',
-                    url: 'https://github.com/kkarthiknayak/miniature-goggles.git',
-                    branch: 'main',
-                    usernameVariable: 'GIT_USERNAME',
-                    passwordVariable: 'GIT_PASSWORD'
+                git credentialsId: 'react-pswd-global',
+                url: 'https://github.com/kkarthiknayak/miniature-goggles.git',
+                branch: 'main',
+                usernameVariable: 'GIT_USERNAME',
+                passwordVariable: 'GIT_PASSWORD'
             
             }
         }
