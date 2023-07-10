@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Button, Card } from "react-bootstrap/esm";
+import { Card } from "react-bootstrap/esm";
 import "../css/black-background.css";
 import "../css/card-wrapper.css";
 import { Form } from "react-bootstrap";
